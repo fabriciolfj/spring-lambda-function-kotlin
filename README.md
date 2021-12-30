@@ -32,3 +32,11 @@
     }
 
 ```
+
+### Chamada da função
+- Para invocar nossa função precisamos de um handler (manipulador) e uma função
+- dentro do spring adapter para aws, temos a classe FunctionInvoker, que funciona como handler e a função podemos definir, que nesse caso é fetchRandomQuotes
+
+### Formas de implementar o lambda na aws
+- Podemos colocar manualmente o arquivo jar no console da aws
+- CloudFormation, terraform, aws cdk ou a ferramenta serverless, que o ultimo é utilizado nesse exemplo
