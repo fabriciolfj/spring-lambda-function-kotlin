@@ -1,0 +1,1 @@
+serverless deploy --aws-profile default

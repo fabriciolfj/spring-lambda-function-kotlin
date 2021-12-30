@@ -1,0 +1,22 @@
+service: test2
+
+provider:
+  name: aws
+  runtime: java11
+  stage: production
+  region: us-east-2
+  timeout: 120
+  memorySize: 1024
+  lambdaHashingVersion: 20201221
+
+package:
+  artifact: target/lambda-0.0.1-SNAPSHOT.jar
+
+functions:
+  fetch-random-quotes:
+    handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
+    description: Showcasing Spring Cloud Function for AWS, Kotlin and Spring Boot
+    events:
+      - schedule: rate(5 minutes)
+    environment:
+      SPRING_CLOUD_FUNCTION_DEFINITION: fetchRandomQuotes
